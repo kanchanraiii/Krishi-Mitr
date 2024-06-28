@@ -1,6 +1,6 @@
 streamlit
-numpy
-pandas
+numpy==1.23.5
+pandas==2.2.0
 streamlit-option-menu
 scikit-learn==1.2.2
 joblib==1.2.0
