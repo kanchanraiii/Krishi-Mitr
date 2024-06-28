@@ -124,22 +124,22 @@ elif selected == "Crop Recommendation":
 
     st.write("Provide the following information to get crop recommendations:")
     st.write("""
-    - **Nitrogen (N)**: Essential nutrient for plant growth.
-    - **Phosphorus (P)**: Vital for root development and energy transfer.
-    - **Potassium (K)**: Important for water regulation and disease resistance.
+    - **Nitrogen (N)**: N-ratio in soil measured in ppm .Essential nutrient for plant growth.
+    - **Phosphorus (P)**: P-ratio in ppm. Vital for root development and energy transfer.
+    - **Potassium (K)**: K-ratio in pmm. Important for water regulation and disease resistance.
     - **pH Value**: Soil acidity or alkalinity level.
     - **Temperature (°C)**: Current temperature.
     - **Humidity (%)**: Moisture content in the air.
     - **Rainfall (mm)**: Amount of recent rainfall.
     """)
 
-    N = st.number_input("Nitrogen (N)", min_value=0, value=0)
-    P = st.number_input("Phosphorus (P)", min_value=0, value=0)
-    K = st.number_input("Potassium (K)", min_value=0, value=0)
-    pH = st.number_input("pH Value", min_value=0.0, max_value=14.0, value=0.0)
+    N = st.number_input("Nitrogen(N) Ratio in ppm ", min_value=0, value=0)
+    P = st.number_input("Phosphorus(P) Ratio in ppm", min_value=0, value=0)
+    K = st.number_input("Potassium(K) Ratio in ppm", min_value=0, value=0)
+    pH = st.number_input("pH Value of soil", min_value=0.0, max_value=14.0, value=0.0)
     temperature = st.number_input("Temperature (°C)", min_value=0.0, value=0.0)
     humidity = st.number_input("Humidity (%)", min_value=0.0, max_value=100.0, value=0.0)
-    rainfall = st.number_input("Rainfall (mm)", min_value=0.0, value=0.0)
+    rainfall = st.number_input("Avg Rainfall (mm) in a month ", min_value=0.0, value=0.0)
     
     if st.button("Recommend Crop"):
         crop_input = np.array([[N, P, K, pH, temperature, humidity, rainfall]])
