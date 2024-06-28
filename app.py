@@ -5,7 +5,7 @@ import os
 import joblib
 import pandas as pd
 from streamlit_option_menu import option_menu
-
+st.write("Current Theme Settings:", st.get_option('theme'))
 # Loading all the models
 working_dir = os.path.dirname(os.path.abspath(__file__))
 crop_recom_model = pickle.load(open(f'{working_dir}/RF_Crop.sav', 'rb'))
