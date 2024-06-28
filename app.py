@@ -8,8 +8,8 @@ from streamlit_option_menu import option_menu
 
 # Loading all the models
 working_dir = os.path.dirname(os.path.abspath(__file__))
-crop_recom_model = joblib.load(open(f'{working_dir}/RF_Crop.sav', 'rb'))
-rainfall_model = joblib.load(open(f'{working_dir}/Rainfall_Model.sav', 'rb'))
+crop_recom_model = pickle.load(open(f'{working_dir}/RF_Crop.sav', 'rb'))
+rainfall_model = pickle.load(open(f'{working_dir}/Rainfall_Model.sav', 'rb'))
 aqi_model = joblib.load(f'{working_dir}/xgb_best_model.joblib', 'rb')
 crop_yield_model =joblib.load(open(f'{working_dir}/voting_yield.sav', 'rb'))
 
