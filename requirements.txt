@@ -1,3 +1,6 @@
+streamlit
+numpy
+pandas
+scikit-learn
 joblib
-sci kit
-streamlit 
+streamlit-option-menu
