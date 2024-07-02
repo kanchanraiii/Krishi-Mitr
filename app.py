@@ -64,15 +64,15 @@ with st.sidebar:
 # Rainfall Prediction
 if selected == "Rainfall Prediction":
     st.title("Rainfall Prediction")
-    st.write("Provide the following information to predict rainfall:")
+    st.write("Provide the following information to predict annual rainfall:")
     st.write("""
     - **Subdivision**: Select your geographical area.
-    - **Year**: Enter the year for prediction.
-    - **May Rainfall (mm)**: Rainfall amount in May.
-    - **June Rainfall (mm)**: Rainfall amount in June.
-    - **July Rainfall (mm)**: Rainfall amount in July.
-    - **August Rainfall (mm)**: Rainfall amount in August.
-    - **September Rainfall (mm)**: Rainfall amount in September.
+    - **Year**: Enter the year for which you wish to predict rainfall.
+    - **May Rainfall (mm)**: Amount of rainfall in May.
+    - **June Rainfall (mm)**: Amount of rainfall in June.
+    - **July Rainfall (mm)**: Amount of rainfall in July.
+    - **August Rainfall (mm)**: Amount of rainfall in August.
+    - **September Rainfall (mm)**: Amount of rainfall in September.
     """)
     # Define all subdivisions
     subdivisions = [
@@ -110,7 +110,7 @@ if selected == "Rainfall Prediction":
             # Predict if all inputs are provided
             if all(rainfall_input_df.iloc[0, 2:]):
                 rainfall_prediction = rainfall_model.predict(rainfall_input_df)
-                st.success(f"Predicted Rainfall: {rainfall_prediction[0]}")
+                st.success(f"The Predicted Annual Rainfall for your Subdivision is: {rainfall_prediction[0]}")
             else:
                 st.error("Please enter valid values")
         else:
