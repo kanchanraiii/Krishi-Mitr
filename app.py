@@ -177,24 +177,25 @@ elif selected == "AQI Prediction":
     feature_8 = st.number_input("Maximum Windspeed (km/h)", min_value=0.0, value=0.0)
     
     if st.button("Predict AQI"):
-        aqi_input = np.array([[feature_1, feature_2, feature_3, feature_4, feature_5, feature_6, feature_7, feature_8]])
+    aqi_input = np.array([[feature_1, feature_2, feature_3, feature_4, feature_5, feature_6, feature_7, feature_8]])
+    
+    if all(aqi_input[0]):  # Check if all input features are provided
+        aqi_prediction = aqi_model.predict(aqi_input)
+        st.success(f"Predicted AQI: {aqi_prediction[0]}")
         
-        if all(aqi_input[0]):  # Check if all input features are provided
-            aqi_prediction = aqi_model.predict(aqi_input)
-            st.success(f"Predicted AQI: {aqi_prediction[0]}")
-            if(aqi_prediction[0]<25):
-                st.success("This AQI is good for crops")
-            elif(aqi_prediction[0]>25 && aqi_prediction[0]<=50):
-                st.success("This AQI falls in the fair range")
-            elif(aqi_predcition[0]>50 && aqi_prediction[0]<=100):
-                st.success("Poor air quality for crops")
-            elif(aqi_prediction[0]>100 && (aqi_prediction[0]<=300):
-                st.success("Vey Poor air quality for crops")
-             else:
-                st.success("Extremly Poor Air Quality for crops")
-                
+        if aqi_prediction[0] < 25:
+            st.success("This AQI is good for crops")
+        elif 25 < aqi_prediction[0] <= 50:
+            st.success("This AQI falls in the fair range")
+        elif 50 < aqi_prediction[0] <= 100:
+            st.success("Poor air quality for crops")
+        elif 100 < aqi_prediction[0] <= 300:
+            st.success("Very Poor air quality for crops")
         else:
-            st.error("Please enter values for all AQI features")
+            st.success("Extremely Poor Air Quality for crops")
+    else:
+        st.error("Please enter values for all AQI features")
+
 
 
 
