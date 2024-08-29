@@ -146,7 +146,7 @@ elif selected == "Crop Recommendation":
         
         if all(crop_input[0][:3]):  # Check if N, P, K values are provided
             crop_recommendation = crop_recom_model.predict(crop_input)
-            st.success(f"Recommended Crop: {crop_recommendation[0]}")
+            st.success(f"According to Krishi Mitr you grow: {crop_recommendation[0]} in your field")
         else:
             st.error("Please enter values for Nitrogen (N), Phosphorus (P), and Potassium (K)")
 
@@ -182,6 +182,17 @@ elif selected == "AQI Prediction":
         if all(aqi_input[0]):  # Check if all input features are provided
             aqi_prediction = aqi_model.predict(aqi_input)
             st.success(f"Predicted AQI: {aqi_prediction[0]}")
+            if(aqi_prediction[0]<25):
+                st.success("This AQI is good for crops")
+            elif(aqi_prediction[0]>25 && aqi_prediction[0]<=50):
+                st.success("This AQI falls in the fair range")
+            elif(aqi_predcition[0]>50 && aqi_prediction[0]<=100):
+                st.success("Poor air quality for crops")
+            elif(aqi_prediction[0]>100 && (aqi_prediction[0]<=300):
+                st.success("Vey Poor air quality for crops")
+             else:
+                st.success("Extremly Poor Air Quality for crops")
+                
         else:
             st.error("Please enter values for all AQI features")
 
