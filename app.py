@@ -303,4 +303,4 @@ else:
     st.write("### Overview")  # Section title for introduction
     st.write("Krishi Mitr is designed to empower farmers with advanced predictive tools. Predict rainfall accurately with our Ridge Regression model. Get personalized crop recommendations using our Random Forest algorithm tailored to your local conditions. Estimate crop yields confidently with a combination of CatBoost, XGBoost, and Decision Tree models. Assess Air Quality Index (AQI) with precision using our XGBoost model, fine-tuned with Grid Search CV. Harness these features to optimize farming strategies and increase productivity.")
     st.write("### Find the Code at:")
-    st.write("Link: https://github.com")
+    st.write("Link: https://github.com/kanchanraiii/Krishi-Mitr")
