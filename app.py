@@ -217,7 +217,7 @@ elif selected == "Meet the Creators":
 
     for i, creator in enumerate(creators):
         with cols[i]:
-            st.image(creator["image"], width=80, caption=None, use_column_width=True, output_format='auto')
+            st.image(creator["image"], width=80, caption=None, use_container_width=True, output_format='auto')
             st.markdown(f"<div class='profile-column'><p class='profile-name'>{creator['name']}</p><a href='{creator['linkedin']}'><img src='https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg' class='icon'></a> <a href='{creator['github']}'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' class='icon'></a></div>", unsafe_allow_html=True)
 
 # Crop Yield Prediction
