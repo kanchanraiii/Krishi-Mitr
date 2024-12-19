@@ -305,4 +305,4 @@ else:
     st.write("### Find the Code at:")
     st.write("Link: https://github.com/kanchanraiii/Krishi-Mitr")
     st.write("")
-    st.write("Made with 💖")
+    st.write("Made with 💖 by Kanchan, Aaron and Saumyaa")
